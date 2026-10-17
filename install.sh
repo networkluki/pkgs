@@ -78,6 +78,16 @@ need gpgv
 
 gpg --batch --no-tty --yes --dearmor --output "$TMP_DIR/archive.gpg" "$TMP_DIR/archive.asc" \
     || fail 'Invalid signing key.'
+
+# Pin the expected public signing key fingerprint, even if the key URL changes.
+# This prevents trusting a substituted key that signs its own InRelease file.
+KEY_FPR='8292CD2CF489DFBF14954D2F1C3F89018DA4223D'
+need awk
+ACTUAL_FPR=$(gpg --batch --no-tty --with-colons --show-keys --fingerprint "$TMP_DIR/archive.gpg" \
+    | awk -F: '$1 == "fpr" { print $10 }') || fail 'Could not read signing key fingerprint.'
+[ "$ACTUAL_FPR" = "$KEY_FPR" ] \
+    || fail "Unexpected signing key fingerprint. Expected $KEY_FPR. No APT configuration was changed."
+
 gpgv --keyring "$TMP_DIR/archive.gpg" "$TMP_DIR/InRelease" \
     || fail 'The repository metadata signature did not verify. No APT configuration was changed.'
 
