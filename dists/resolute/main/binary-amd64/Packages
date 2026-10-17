@@ -1,0 +1,37 @@
+Package: tictactoe
+Architecture: all
+Version: 1.0.1
+Priority: optional
+Section: games
+Maintainer: Luki Hackwell <dev.networkluki@gmail.com>
+Depends: python3, python3-tk
+Filename: pool/main/t/tictactoe/tictactoe_1.0.1_all.deb
+Size: 2120
+MD5sum: 48b8fa4a19810b1f23d51ddcddce19ff
+SHA1: 3533ef1fa930743f4723c1e7292d925ec3e19a1f
+SHA256: 24a6d2af0275874e346242f8324e81454ff659f41c2d538655f3e30977de4a72
+SHA512: bfcf43403d8cd4e69ef4a31f0492a5074a2c5dbc85f39f5e4a10925dc65de9ee6b4882ac642ae0e56a2a488e07e623119e3886bf0ca432a2103b4231019e961b
+Description: Simple two-player Tic-Tac-Toe game
+ A small Tic-Tac-Toe game written in Python with a Tkinter GUI.
+ Created by Luki Hackwell.
+
+Package: tictactoe
+Architecture: all
+Version: 1.1.0
+Priority: optional
+Section: games
+Maintainer: Luki Hackwell <dev.networkluki@gmail.com>
+Depends: python3, python3-tk
+Filename: pool/main/t/tictactoe/tictactoe_1.1.0_all.deb
+Size: 3880
+MD5sum: 174d0da4a363e0fb7469bbdd3b6692c2
+SHA1: 1bc5d24ace022e0f002e3c45459e8a64a940b49a
+SHA256: 2e3cb5b85946cc119e031203bab1766d5e340c1e83c6dea069928537e7709203
+SHA512: e1472bcd5e542bcb8c019cd263b8cdc67437e494785899e1cfaaea44767244e5d09a618ceb28e1fda25bb2a744d9c212cfde0fd10be5b4dc67c6a38794a79c7c
+Homepage: https://lukihackwell.com
+Description: Tic-Tac-Toe game against the computer or a friend
+ A small Tic-Tac-Toe game written in Python with a Tkinter GUI.
+ Play against the computer or a friend, choose X or O, and keep
+ track of wins, losses and draws.
+ Created by Luki Hackwell.
+

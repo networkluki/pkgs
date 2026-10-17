@@ -1,0 +1,23 @@
+Architectures: amd64
+Codename: resolute
+Components: main
+Date: Sat, 17 Oct 2026 14:40:35 +0000
+Label: NetworkLuki Packages
+Origin: NetworkLuki
+Suite: resolute
+MD5Sum:
+ fcd4bd827ce5700e0a0aa92d473dbf49              159 Release
+ fdb4c06d12c170a88b159d342789779c             1496 main/binary-amd64/Packages
+ c11626fa727a3ca49de442e6600643bc              764 main/binary-amd64/Packages.gz
+SHA1:
+ f64549354eccee36e98b955db5756aa95034c658              159 Release
+ 74d75209ef28b5ccb140ff32e38e197be8dc8f73             1496 main/binary-amd64/Packages
+ f8984d08990e56e6bbfadac92afdadfec006f351              764 main/binary-amd64/Packages.gz
+SHA256:
+ bc7ab4c8ecadb1916ac956ad82686899a590f3fe7deb1de9d1c556226bd8a7da              159 Release
+ f24c7956eeddb16196b0a0acb1a069b1b291f2eb4546994eea1cb00f57b8fb1d             1496 main/binary-amd64/Packages
+ 542da9735464df4f0565738aa3a54ec50af1d51a02c73cec4127099ee6396780              764 main/binary-amd64/Packages.gz
+SHA512:
+ b6e4e428b330747d92b245fe264bca6c31cf4d944b03b928fbe0864aff3177c9f0a18d72a90b66c08f0834b74c9b23a75720094860a3679912ab18c02335f3c9              159 Release
+ 511ea817ead47ec9fdcabcdd67322feb5767f4fb46a92015e252377bd262ab67be63b1aabe2b2c3b74d247edd513db4c88e1857cf1d239830b008038d904ee34             1496 main/binary-amd64/Packages
+ 8da573485ce2d0de5d52c41c9f02a1271adc78a39696f0086b1d58d30c51147587fb7e7e03fa399f1ce9f2044799d40ffec2b2f13361f079dbd2f32ee1358aa1              764 main/binary-amd64/Packages.gz
