@@ -1,23 +1,19 @@
 Architectures: amd64
 Codename: trixie
 Components: main
-Date: Sat, 17 Oct 2026 11:53:30 +0000
+Date: Sat, 17 Oct 2026 12:43:25 +0000
 Label: NetworkLuki Packages
 Origin: NetworkLuki
 Suite: trixie
 MD5Sum:
- 19b33abc68cfacbca25678a131cc3897              155 Release
- 6468fb36593c7d410cf2c6d5b9775f16              537 main/binary-amd64/Packages
- de74f3bfbe061483b683e5e22de4c2b0              390 main/binary-amd64/Packages.gz
+ fdb4c06d12c170a88b159d342789779c             1496 main/binary-amd64/Packages
+ c11626fa727a3ca49de442e6600643bc              764 main/binary-amd64/Packages.gz
 SHA1:
- b66808d81baf2e3a70b7ca0fa7b0c7139c944682              155 Release
- 78ad03dc989d27d88c4484257195aa98d650ecb9              537 main/binary-amd64/Packages
- 2d21c3661de1b330065d568976271190ebac6bbb              390 main/binary-amd64/Packages.gz
+ 74d75209ef28b5ccb140ff32e38e197be8dc8f73             1496 main/binary-amd64/Packages
+ f8984d08990e56e6bbfadac92afdadfec006f351              764 main/binary-amd64/Packages.gz
 SHA256:
- 84833ecf48450d9e21ad5fa06f607fabd9aa6aa47365e66076e86355ca1c1a5a              155 Release
- ad878d5b255136f3df0af68d4e56de755628555e8c1372a85b4ea4f80996838b              537 main/binary-amd64/Packages
- 0c527cad72dbe2dd6b6603345a4e96de309ce35afba231400ed89566c6d667ff              390 main/binary-amd64/Packages.gz
+ f24c7956eeddb16196b0a0acb1a069b1b291f2eb4546994eea1cb00f57b8fb1d             1496 main/binary-amd64/Packages
+ 542da9735464df4f0565738aa3a54ec50af1d51a02c73cec4127099ee6396780              764 main/binary-amd64/Packages.gz
 SHA512:
- 1922aa2e597fa995136ec04f88a28a9da3f50bc507de791d711ea0208ac6e16e4327f947cbcd8bf404d29d6ca2e589b478d3293a51d19f34c52782013ea080c5              155 Release
- 7f25261095fb83352ab64f79928eb7d80008fe98fcc2d2a9447d0a59ec3f5a354263bb152de987a7cda3ef5ceb4946dee39632b5d6a5f967bc17a9623583ae82              537 main/binary-amd64/Packages
- 6ac45b2f71e319d0003830d8cd4cf8a8e2021f243515423dd0acf232ae0e6d0c0ca93b7d91bee642409217946501b8e202ff49e32e9045efb7ba50da3618a46c              390 main/binary-amd64/Packages.gz
+ 511ea817ead47ec9fdcabcdd67322feb5767f4fb46a92015e252377bd262ab67be63b1aabe2b2c3b74d247edd513db4c88e1857cf1d239830b008038d904ee34             1496 main/binary-amd64/Packages
+ 8da573485ce2d0de5d52c41c9f02a1271adc78a39696f0086b1d58d30c51147587fb7e7e03fa399f1ce9f2044799d40ffec2b2f13361f079dbd2f32ee1358aa1              764 main/binary-amd64/Packages.gz
