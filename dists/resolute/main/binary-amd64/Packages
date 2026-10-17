@@ -35,3 +35,24 @@ Description: Tic-Tac-Toe game against the computer or a friend
  track of wins, losses and draws.
  Created by Luki Hackwell.
 
+Package: tictactoe
+Architecture: all
+Version: 1.2.0
+Priority: optional
+Section: games
+Maintainer: Luki Hackwell <dev.networkluki@gmail.com>
+Depends: python3, python3-tk
+Filename: pool/main/t/tictactoe/tictactoe_1.2.0_all.deb
+Size: 5916
+MD5sum: 302f9af3de26133a902b197be6148adb
+SHA1: 5b707dddb90394492e47f36c36a8895f3bb958a1
+SHA256: 17a8eea8142e038408236004423b0f185794ed23d51eed18828fae696f5a96de
+SHA512: 56e64dfd4f7e8ed05cb40016e466d0ec9e99d9a4aa61ee8a21e93210343d3886fc4f8c3c437cab0f72c1f62926ad5de3a0770577bf8984ff0bfdfc5e07b794e5
+Homepage: https://lukihackwell.com
+Description: Tic-Tac-Toe game against the computer or a friend
+ A small Tic-Tac-Toe game written in Python with a Tkinter GUI.
+ Play against the computer or a friend, choose X or O, and keep
+ track of wins, losses and draws. Mark colors and a light or
+ dark theme can be chosen from the System menu.
+ Created by Luki Hackwell.
+

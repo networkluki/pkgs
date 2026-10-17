@@ -1,19 +1,19 @@
 Architectures: amd64
 Codename: trixie
 Components: main
-Date: Sat, 17 Oct 2026 12:43:25 +0000
+Date: Sat, 17 Oct 2026 15:33:51 +0000
 Label: NetworkLuki Packages
 Origin: NetworkLuki
 Suite: trixie
 MD5Sum:
- fdb4c06d12c170a88b159d342789779c             1496 main/binary-amd64/Packages
- c11626fa727a3ca49de442e6600643bc              764 main/binary-amd64/Packages.gz
+ fa47f4482d32c2854f01b089af59607d             2393 main/binary-amd64/Packages
+ 513ee3507071bf9d31a5523e11ccfe66             1003 main/binary-amd64/Packages.gz
 SHA1:
- 74d75209ef28b5ccb140ff32e38e197be8dc8f73             1496 main/binary-amd64/Packages
- f8984d08990e56e6bbfadac92afdadfec006f351              764 main/binary-amd64/Packages.gz
+ dae8e9bb42d1c1fd739ee10ee49ee0b68c80ec69             2393 main/binary-amd64/Packages
+ 3794a259d9af3896444a23b4554653d6bf33dae6             1003 main/binary-amd64/Packages.gz
 SHA256:
- f24c7956eeddb16196b0a0acb1a069b1b291f2eb4546994eea1cb00f57b8fb1d             1496 main/binary-amd64/Packages
- 542da9735464df4f0565738aa3a54ec50af1d51a02c73cec4127099ee6396780              764 main/binary-amd64/Packages.gz
+ d5624800b17f859556c7e2f5126df1219eeed0d1ab03e48afb63a8ba788ac0cb             2393 main/binary-amd64/Packages
+ edfc14e920e8a2138c4f04d3b76b6a496d7caaa8ae38efe0acf8139bcab0a600             1003 main/binary-amd64/Packages.gz
 SHA512:
- 511ea817ead47ec9fdcabcdd67322feb5767f4fb46a92015e252377bd262ab67be63b1aabe2b2c3b74d247edd513db4c88e1857cf1d239830b008038d904ee34             1496 main/binary-amd64/Packages
- 8da573485ce2d0de5d52c41c9f02a1271adc78a39696f0086b1d58d30c51147587fb7e7e03fa399f1ce9f2044799d40ffec2b2f13361f079dbd2f32ee1358aa1              764 main/binary-amd64/Packages.gz
+ f9b33f6fc0b493daab27f8495f299435e5c127b8c8a3f8cb4c50c51e641e30bd9055897b5703ba13c256b1777dcaec87e0708eb8dce95273f388cc0b889eebf0             2393 main/binary-amd64/Packages
+ c2168b808feaa89882cf6fd32e5ea839638e2f85a4c6696a8a01036c2cb93cb3883699217dab30ecbec663594480629e4b2ccd72ed57efc69b35d87f5dd778a9             1003 main/binary-amd64/Packages.gz
