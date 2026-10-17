@@ -27,6 +27,49 @@ APT packages are currently published for selected distributions/releases
 available. A distribution is supported only when its own compatible signed
 repository metadata and packages have been published.
 
+## Ubuntu 26.04 (Resolute): signing and publishing
+
+Ubuntu 26.04 (`resolute`) needs its **own** signed APT metadata. Do not
+redirect Ubuntu clients to Debian `trixie`.
+
+A reproducible, local signing helper is provided in
+[`scripts/publish-resolute.sh`](./scripts/publish-resolute.sh).
+It generates `Packages`, `Packages.gz`, `Release`, `InRelease`,
+and `Release.gpg` for the existing `tictactoe` packages. It does not
+upload anything or export the private key.
+
+On the trusted Linux machine holding the NetworkLuki archive signing key,
+review the script and run:
+
+```bash
+sudo apt-get install -y apt-utils gnupg
+cd ~/deb/pkgs
+git pull --ff-only
+less scripts/publish-resolute.sh
+bash scripts/publish-resolute.sh
+```
+
+Inspect the generated `dists/resolute` files and verify both signatures.
+After confirming that the indexed packages are intended for Ubuntu 26.04,
+publish them:
+
+```bash
+gpg --verify dists/resolute/InRelease
+gpg --verify dists/resolute/Release.gpg dists/resolute/Release
+git status --short -- dists/resolute
+git add dists/resolute
+git diff --cached --check
+git diff --cached --stat
+git commit -m "Publish signed Ubuntu Resolute APT repository"
+git push origin main
+```
+
+Then, on the Ubuntu machine, check the public `InRelease` URL and run
+`apt-get -s install tictactoe` before a real installation. A package
+marked `Architecture: all` is not automatically guaranteed compatible
+with every distro: dependencies, runtime and graphical behavior still
+require testing.
+
 ## License and usage
 
 **NetworkLuki Restricted Software License v1.0** applies to original,
