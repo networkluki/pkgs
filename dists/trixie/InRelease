@@ -1,0 +1,33 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64
+Codename: trixie
+Components: main
+Date: Sat, 17 Oct 2026 11:53:30 +0000
+Label: NetworkLuki Packages
+Origin: NetworkLuki
+Suite: trixie
+MD5Sum:
+ 19b33abc68cfacbca25678a131cc3897              155 Release
+ 6468fb36593c7d410cf2c6d5b9775f16              537 main/binary-amd64/Packages
+ de74f3bfbe061483b683e5e22de4c2b0              390 main/binary-amd64/Packages.gz
+SHA1:
+ b66808d81baf2e3a70b7ca0fa7b0c7139c944682              155 Release
+ 78ad03dc989d27d88c4484257195aa98d650ecb9              537 main/binary-amd64/Packages
+ 2d21c3661de1b330065d568976271190ebac6bbb              390 main/binary-amd64/Packages.gz
+SHA256:
+ 84833ecf48450d9e21ad5fa06f607fabd9aa6aa47365e66076e86355ca1c1a5a              155 Release
+ ad878d5b255136f3df0af68d4e56de755628555e8c1372a85b4ea4f80996838b              537 main/binary-amd64/Packages
+ 0c527cad72dbe2dd6b6603345a4e96de309ce35afba231400ed89566c6d667ff              390 main/binary-amd64/Packages.gz
+SHA512:
+ 1922aa2e597fa995136ec04f88a28a9da3f50bc507de791d711ea0208ac6e16e4327f947cbcd8bf404d29d6ca2e589b478d3293a51d19f34c52782013ea080c5              155 Release
+ 7f25261095fb83352ab64f79928eb7d80008fe98fcc2d2a9447d0a59ec3f5a354263bb152de987a7cda3ef5ceb4946dee39632b5d6a5f967bc17a9623583ae82              537 main/binary-amd64/Packages
+ 6ac45b2f71e319d0003830d8cd4cf8a8e2021f243515423dd0acf232ae0e6d0c0ca93b7d91bee642409217946501b8e202ff49e32e9045efb7ba50da3618a46c              390 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQSCks0s9InfvxSVTS8cP4kBjaQiPQUCatNhwgAKCRAcP4kBjaQi
+PcdQAP0VNyCcwqzNdiCiPoRL/yPKyhI0iBlBs5x5uGcfjGvXGwD/SM6nwuavrtzP
+w9+titIqowsaagPT4L/cxlcXJBCCLgM=
+=yIIP
+-----END PGP SIGNATURE-----
