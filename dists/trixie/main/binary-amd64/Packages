@@ -1,0 +1,16 @@
+Package: tictactoe
+Version: 1.0.1
+Architecture: all
+Maintainer: Luki Hackwell <dev.networkluki@gmail.com>
+Depends: python3, python3-tk
+Filename: pool/main/t/tictactoe/tictactoe_1.0.1_all.deb
+Size: 2120
+MD5sum: 48b8fa4a19810b1f23d51ddcddce19ff
+SHA1: 3533ef1fa930743f4723c1e7292d925ec3e19a1f
+SHA256: 24a6d2af0275874e346242f8324e81454ff659f41c2d538655f3e30977de4a72
+Section: games
+Priority: optional
+Description: Simple two-player Tic-Tac-Toe game
+ A small Tic-Tac-Toe game written in Python with a Tkinter GUI.
+ Created by Luki Hackwell.
+
