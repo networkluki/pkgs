@@ -4,60 +4,67 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#2c001e">
+  <meta name="theme-color" content="#06152f">
+  <link rel="icon" href="/assets/img/pkgs-icon.svg" type="image/svg+xml">
+  <meta property="og:title" content="NetworkLuki Packages">
+  <meta property="og:description" content="Signed APT packages and reliable updates for Linux.">
   <meta name="description" content="NetworkLuki Linux packages. APT repository setup for compatible Debian- and Ubuntu-based distributions, with more package formats planned.">
   <title>NetworkLuki Packages | APT Repository</title>
   <style>
-    :root { color-scheme: dark; --bg: #0e0c13; --surface: #19131e; --surface-2: #211826; --aubergine: #2c001e; --orange: #e95420; --orange-soft: #ffa47e; --text: #f8f3f9; --muted: #b9aebf; --line: #443545; }
+    :root { color-scheme: dark; --bg: #050e20; --surface: #101e39; --surface-2: #132748; --aubergine: #071c41; --orange: #2563eb; --orange-soft: #67d5ff; --text: #f3f8ff; --muted: #b7c8e5; --line: #2b4672; }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; min-height: 100vh; color: var(--text); font: 16px/1.65 Ubuntu, 'DejaVu Sans', system-ui, sans-serif; background: radial-gradient(ellipse 750px 500px at 78% 3%, #53213f80, transparent 70%), radial-gradient(ellipse 680px 440px at 0 55%, #461b3280, transparent 70%), var(--bg); }
+    body { margin: 0; min-height: 100vh; color: var(--text); font: 16px/1.65 Ubuntu, 'DejaVu Sans', system-ui, sans-serif; background: radial-gradient(ellipse 750px 500px at 78% 3%, #123d9380, transparent 70%), radial-gradient(ellipse 680px 440px at 0 55%, #0b4c9380, transparent 70%), var(--bg); }
     a { color: inherit; text-underline-offset: 3px; }
     button { font: inherit; }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 4px; }
     .wrap { width: min(1080px, calc(100% - 44px)); margin: 0 auto; }
-    .top { border-bottom: 1px solid #ffffff16; background: #120c17a6; backdrop-filter: blur(10px); }
+    .top { border-bottom: 1px solid #ffffff16; background: #061329c0; backdrop-filter: blur(10px); }
     .nav { min-height: 77px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 760; letter-spacing: -.03em; font-size: 1.1rem; text-decoration: none; }
-    .brand-icon { display: grid; place-items: center; width: 35px; height: 35px; background: var(--orange); border-radius: 11px; color: #fff; font-weight: 800; font-size: .9rem; }
+    .brand-icon { display: grid; place-items: center; width: 38px; height: 38px; background: #0b2553; border-radius: 11px; overflow: hidden; flex-shrink: 0; }
+    .brand-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .brand-accent { color: var(--orange-soft); }
     .links { display: flex; align-items: center; gap: 24px; font-size: .93rem; }
     .links a { color: var(--muted); text-decoration: none; transition: color .15s; }
     .links a:hover { color: var(--text); }
     .hero { padding: clamp(86px, 11vw, 138px) 0 70px; text-align: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid #ffffff2b; border-radius: 100px; padding: 7px 16px; background: #ffffff09; color: #edc8da; font-size: .79rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
-    .eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 14px #e95420b0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid #ffffff2b; border-radius: 100px; padding: 7px 16px; background: #ffffff09; color: #bfdcf8; font-size: .79rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 14px #38bdf8b0; }
     h1 { margin: 27px auto 16px; font-size: clamp(2.9rem, 7vw, 5.4rem); line-height: 1.08; letter-spacing: -.065em; font-weight: 800; }
     h1 span { color: var(--orange-soft); }
     .lede { max-width: 660px; margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2vw, 1.16rem); }
-    .terminal { max-width: 760px; margin: 44px auto 0; overflow: hidden; border: 1px solid #685060; border-radius: 15px; background: #151118; box-shadow: 0 30px 80px #0008, 0 0 0 5px #ffffff04; text-align: left; }
-    .terminal-bar { display: flex; align-items: center; justify-content: space-between; padding: 13px 18px; background: linear-gradient(180deg, #43303e, #322532); border-bottom: 1px solid #ffffff13; color: #e9dbe6; font-size: .83rem; }
+    .terminal { max-width: 760px; margin: 44px auto 0; overflow: hidden; border: 1px solid #274a79; border-radius: 15px; background: #081529; box-shadow: 0 30px 80px #0008, 0 0 0 5px #ffffff04; text-align: left; }
+    .terminal-bar { display: flex; align-items: center; justify-content: space-between; padding: 13px 18px; background: linear-gradient(180deg, #1d3a68, #132847); border-bottom: 1px solid #ffffff13; color: #e0ecff; font-size: .83rem; }
     .dots { display: flex; gap: 7px; }
     .dots i { display: block; width: 11px; height: 11px; border-radius: 50%; background: #b69fae; }
     .dots i:first-child { background: #ed6a5e; }
     .dots i:nth-child(2) { background: #f4bf50; }
     .dots i:nth-child(3) { background: #61c454; }
     .terminal-content { padding: 25px 23px; }
-    .terminal-label { color: #a89aaf; font-size: .77rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 11px; }
+    .terminal-label { color: #a2b9d8; font-size: .77rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 11px; }
     .command { display: flex; align-items: start; gap: 14px; justify-content: space-between; padding: 9px 0; }
     .command + .command { border-top: 1px solid #ffffff11; }
     .code { min-width: 0; overflow-wrap: anywhere; font: 500 .95rem/1.7 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, monospace; color: #f8f6fc; }
     .prompt { color: #a8e1a2; padding-right: 9px; user-select: none; }
-    .copy { flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #604b5d; border-radius: 8px; background: #38293c; color: #f7ecf8; cursor: pointer; font-size: .76rem; font-weight: 700; padding: 6px 10px; }
-    .copy:hover { border-color: var(--orange); background: #4a2c38; }
+    .copy { flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #365981; border-radius: 8px; background: #123054; color: #f7ecf8; cursor: pointer; font-size: .76rem; font-weight: 700; padding: 6px 10px; }
+    .copy:hover { border-color: var(--orange); background: #1c4878; }
     .copy svg { width: 14px; height: 14px; }
-    .warning { margin: 0; padding: 13px 23px 17px; border-top: 1px solid #ffffff14; color: #b6a9bc; font-size: .77rem; }
+    .warning { margin: 0; padding: 13px 23px 17px; border-top: 1px solid #ffffff14; color: #b8c8df; font-size: .77rem; }
     .actions { margin-top: 31px; display: flex; flex-wrap: wrap; justify-content: center; gap: 13px; }
     .button { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 9px; font-weight: 750; text-decoration: none; font-size: .9rem; }
     .button-primary { background: var(--orange); color: white; }
-    .button-primary:hover { background: #f26c3b; }
-    .button-secondary { border: 1px solid #766175; background: #ffffff0b; }
+    .button-primary:hover { background: #347cff; }
+    .button-secondary { border: 1px solid #537095; background: #ffffff0b; }
     .button-secondary:hover { background: #ffffff18; }
+    .hero-visual { max-width: 1000px; margin: 42px auto 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 24px 65px #0007; background: #061329; }
+    .hero-banner { display: block; width: 100%; height: auto; }
     .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 5px 0 90px; }
-    .feature { padding: 26px 23px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(155deg, #261c2bde, #1b1421ef); }
+    .feature { padding: 26px 23px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(155deg, #10284bdd, #0a1b38ee); }
     .feature .symbol { font-size: 1.5rem; line-height: 1.2; color: var(--orange-soft); }
     .feature h2 { font-size: 1rem; margin: 15px 0 7px; }
     .feature p { margin: 0; color: var(--muted); font-size: .88rem; }
-    .foot { border-top: 1px solid #ffffff16; padding: 26px 0 33px; color: #b4a7b9; font-size: .84rem; }
+    .foot { border-top: 1px solid #ffffff16; padding: 26px 0 33px; color: #b6c6e3; font-size: .84rem; }
     .foot-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .footer-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .footer-left a { color: var(--orange-soft); font: 600 .82rem 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, monospace; }
@@ -70,7 +77,7 @@
 <body>
   <header class="top">
     <nav class="wrap nav" aria-label="Main navigation">
-      <a class="brand" href="/" aria-label="NetworkLuki Packages home"><span class="brand-icon" aria-hidden="true">NL</span><span>NetworkLuki <span style="color:#ffa47e">Packages</span></span></a>
+      <a class="brand" href="/" aria-label="NetworkLuki Packages home"><span class="brand-icon" aria-hidden="true"><img src="/assets/img/pkgs-icon.svg" alt=""></span><span>NetworkLuki <span class="brand-accent">Packages</span></span></a>
       <div class="links"><a href="#install">Install</a><a href="https://github.com/networkluki/pkgs" rel="noopener noreferrer">GitHub ↗</a></div>
     </nav>
   </header>
@@ -97,6 +104,9 @@
       <div class="actions">
         <a class="button button-primary" href="https://github.com/networkluki/pkgs" rel="noopener noreferrer">View on GitHub ↗</a>
         <a class="button button-secondary" href="https://github.com/networkluki/pkgs/blob/main/install.sh" rel="noopener noreferrer">Read install.sh</a>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-banner" src="/assets/img/pkgs-hero.svg" alt="NetworkLuki Packages: blue APT package box with GPG key badge and signed Linux repository banner" width="1600" height="760" loading="lazy" decoding="async">
       </div>
     </section>
     <section class="features" aria-label="Repository features">
