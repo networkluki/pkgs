@@ -31,15 +31,24 @@
 </g>
 <g font-family="Ubuntu,Arial,sans-serif" transform="translate(734 245)">
   <text y="-71" font-size="23" font-weight="700" letter-spacing="7" fill="#7dd3fc">NETWORKLUKI · LINUX REPOSITORY</text>
-  <text y="46" font-size="70" font-weight="800" letter-spacing="-2" fill="#fff">pkgs.networkluki.com</text>
-  <text y="118" font-size="37" letter-spacing="5" fill="#38bdf8">SECURE LINUX PACKAGES</text>
-  <text y="184" font-size="29" fill="#c6d9f8">APT packages. Signed metadata. Reliable updates.</text>
+  <text y="46" font-size="48" font-weight="800" letter-spacing="-2" fill="#fff">pkgs.networkluki.com</text>
+  <text y="118" font-size="30" letter-spacing="4" fill="#38bdf8">SECURE LINUX PACKAGES</text>
+  <text y="184" font-size="24" fill="#c6d9f8">APT packages. Signed metadata. Reliable updates.</text>
   <g transform="translate(0 238)" font-size="22" fill="#dbeafe">
     <rect width="600" height="83" rx="17" fill="#091b41" stroke="#22549a" stroke-width="2"/>
     <circle cx="39" cy="41" r="14" fill="#10b981"/>
     <path d="m32 40 6 7 11-14" fill="none" stroke="#eafffa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="67" y="35" font-weight="700">GPG-verified APT repository</text>
-    <text x="67" y="62" font-size="19" fill="#93c5fd">Debian 13 Trixie · amd64 · main</text>
+    <text x="67" y="62" font-size="19" fill="#93c5fd">Debian 13 · Ubuntu 26.04 · amd64</text>
   </g>
 </g>
+  <g font-family="Ubuntu,Arial,sans-serif" transform="translate(734 596)">
+    <rect x="0" y="-7" width="715" height="141" rx="17" fill="#061733" stroke="#2676c3" stroke-width="2"/>
+    <text x="24" y="27" fill="#f5f9ff" font-size="25" font-weight="700">Add the APT repository</text>
+    <g font-family="'Ubuntu Mono','DejaVu Sans Mono',monospace" font-size="17" fill="#a7d8ff">
+      <text x="24" y="60">curl -fsSL https://pkgs.networkluki.com/install.sh | sudo sh</text>
+      <text x="24" y="86">sudo apt update</text>
+      <text x="24" y="112">sudo apt install tictactoe</text>
+    </g>
+  </g>
 </svg>
