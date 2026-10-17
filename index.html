@@ -62,7 +62,7 @@
     .footer-left { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .footer-left a { color: var(--orange-soft); font: 600 .82rem 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, monospace; }
     .foot a:hover { color: var(--orange-soft); }
-    .foot a[rel="license"] { color: var(--orange-soft); }
+    .foot .license-link { color: var(--orange-soft); }
     @media (max-width: 740px) { .features { grid-template-columns: 1fr; margin-bottom: 55px; } .hero { padding-top: 76px; } .links { gap: 13px; font-size: .8rem; } .command { gap: 8px; } .code { font-size: .78rem; } .terminal-content { padding: 19px 14px; } .warning { padding-inline: 14px; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -105,7 +105,7 @@
       <article class="feature"><div class="symbol" aria-hidden="true">⌘</div><h2>Source available</h2><p>Review the repository before installing. NetworkLuki-owned software is published under a restrictive license, not an open-source license.</p></article>
     </section>
   </main>
-  <footer class="foot"><div class="wrap foot-inner"><div class="footer-left"><span>© NetworkLuki · pkgs.networkluki.com</span><a id="latest-diff" href="https://github.com/networkluki/pkgs/commit/4bd112db599440e20005e107e093dd7f210fa604" target="_blank" rel="noopener noreferrer">version#4bd112d</a></div><span>Built for Linux, with care. <a href="/LICENSE" rel="license">Restricted License</a> · <a href="https://github.com/networkluki" rel="noopener noreferrer">@networkluki</a></span></div></footer>
+  <footer class="foot"><div class="wrap foot-inner"><div class="footer-left"><span>© NetworkLuki · pkgs.networkluki.com</span><a id="latest-diff" href="https://github.com/networkluki/pkgs/commit/4bd112db599440e20005e107e093dd7f210fa604" target="_blank" rel="noopener noreferrer">version#4bd112d</a></div><span>Built for Linux, with care. <a class="license-link" href="https://github.com/networkluki/pkgs/blob/main/LICENSE" target="_blank" rel="license noopener noreferrer">Restricted License</a> · <a href="https://github.com/networkluki" rel="noopener noreferrer">@networkluki</a></span></div></footer>
   <script src="/assets/js/copy.js" defer></script>
   <script src="/assets/js/latest-commit.js" defer></script>
 </body>
