@@ -1,0 +1,89 @@
+NETWORKLUKI RESTRICTED SOFTWARE LICENSE
+Version 1.0 — 17 October 2026
+
+Copyright (c) 2026 Luki Hackwell (NetworkLuki).
+All rights reserved.
+
+1. DEFINITIONS AND SCOPE
+
+"Software" means original source code, scripts, website code, documentation,
+repository metadata, and first-party software packages published in this
+repository that are owned by the copyright holder and do not carry a separate
+license. This includes NetworkLuki's original contributions to the repository
+and any first-party packages explicitly distributed under this license.
+
+This license does not apply to third-party code, libraries, assets, trademarks,
+or components that the copyright holder does not own. Their own licenses and
+other applicable legal rights remain in effect. A separate license supplied
+with a particular file or package takes precedence for that material.
+
+2. LIMITED PERMISSION
+
+Subject to these terms, you may:
+(a) access, download, and inspect the Software, including its source code;
+(b) install and run unmodified, officially distributed Software for personal
+    use or internal use within your own organization, including internal
+    commercial operations;
+(c) make copies strictly necessary for the permitted installation, execution,
+    and reasonable internal backup of the Software; and
+(d) privately modify the Software for your own internal use, provided those
+    modifications are not distributed or offered to others.
+
+These permissions are non-exclusive, non-transferable, and do not grant a
+right to distribute the Software to other persons or organizations.
+
+3. RESTRICTIONS
+
+Without the copyright holder's prior written permission, you may not:
+(a) sell, resell, rent, lease, sublicense, or otherwise commercially distribute
+    the Software or copies of it;
+(b) publicly redistribute, republish, host, mirror, or offer the Software or
+    modified versions for download, whether for a fee or free of charge;
+(c) publish or distribute derivative works based on the Software;
+(d) remove or misrepresent copyright, authorship, or license notices; or
+(e) claim that the Software or its branding is your own or that NetworkLuki
+    endorses your product or service.
+
+Making the source publicly viewable does not place it in the public domain
+and does not make it open-source software under an OSI-approved license.
+
+4. PERMISSIONS AND EXCEPTIONS
+
+For redistribution, resale, integration into products offered to others,
+public forks containing modifications, or other permissions not granted
+above, obtain written authorization from the copyright holder.
+
+Nothing in these terms overrides permissions arising under applicable law,
+including mandatory statutory exceptions, or rights granted by a separate
+applicable third-party license.
+
+5. OWNERSHIP
+
+The Software is licensed, not sold. All rights not expressly granted are
+reserved by the copyright holder. NetworkLuki names, logos, and other
+branding are not licensed for independent use by these terms.
+
+6. TERMINATION
+
+Your rights under this license terminate if you materially violate its terms
+and do not cure the violation within 30 days after receiving notice. This
+does not limit rights or remedies available under applicable law.
+
+7. NO WARRANTY; LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED
+"AS IS", WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COPYRIGHT HOLDER
+SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR
+PUNITIVE DAMAGES ARISING FROM USE OF THE SOFTWARE. THIS CLAUSE DOES NOT
+EXCLUDE LIABILITY THAT CANNOT LAWFULLY BE EXCLUDED.
+
+8. CONTACT
+
+For additional licensing permissions, open a licensing inquiry through:
+https://github.com/networkluki/pkgs/issues
+
+This license is a custom, source-available, restrictive license.
+It is not an OSI-approved open-source license.
