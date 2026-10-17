@@ -1,5 +1,5 @@
 #!/bin/sh
-# NetworkLuki APT repository installer for Debian.
+# NetworkLuki APT repository installer for supported Linux distributions.
 # Usage: sudo sh install.sh
 set -eu
 umask 077
@@ -14,13 +14,34 @@ fail() { printf '[NetworkLuki APT] ERROR: %s\n' "$*" >&2; exit 1; }
 need() { command -v "$1" >/dev/null 2>&1 || fail "Missing command: $1"; }
 
 [ "$(id -u)" -eq 0 ] || fail 'Run as root: sudo sh install.sh'
-[ -r /etc/os-release ] || fail 'Cannot detect operating system.'
+[ -r /etc/os-release ] || fail 'Cannot detect Linux distribution.'
 . /etc/os-release
-[ "${ID:-}" = 'debian' ] || fail 'Only Debian is supported. Ubuntu and derivatives are not automatically mapped to Debian releases.'
-CODENAME=${VERSION_CODENAME:-}
+
+# APT repositories require an APT-based distribution. Never map RPM, Pacman,
+# APK or other package managers to Debian/Ubuntu package repositories.
+if ! command -v apt-get >/dev/null 2>&1 || ! command -v dpkg >/dev/null 2>&1; then
+    fail "No APT/dpkg package manager detected on ${PRETTY_NAME:-Linux}. This repository currently offers APT packages only; RPM, Pacman and APK repositories are not available."
+fi
+
+# Use the OS's declared upstream release when available. For derivatives such
+# as Linux Mint, UBUNTU_CODENAME identifies the Ubuntu package base.
+# Never assume that a derivative is compatible with a Debian release.
+case "${ID:-}" in
+    debian|ubuntu)
+        CODENAME=${VERSION_CODENAME:-}
+        ;;
+    *)
+        case " ${ID_LIKE:-} " in
+            *" ubuntu "*) CODENAME=${UBUNTU_CODENAME:-${VERSION_CODENAME:-}} ;;
+            *" debian "*) CODENAME=${DEBIAN_CODENAME:-${VERSION_CODENAME:-}} ;;
+            *) fail "Unrecognized APT-based Linux distribution: ${PRETTY_NAME:-${ID:-unknown}}." ;;
+        esac
+        ;;
+esac
 case "$CODENAME" in
-    trixie|bookworm|bullseye) ;;
-    *) fail "Unsupported Debian codename: ${CODENAME:-unknown}. No automatic fallback is allowed." ;;
+    ''|[!a-z0-9]*|*[!a-z0-9._+-]*)
+        fail "Invalid or missing release codename: ${CODENAME:-unknown}."
+        ;;
 esac
 
 need curl
@@ -60,7 +81,7 @@ gpg --batch --no-tty --yes --dearmor --output "$TMP_DIR/archive.gpg" "$TMP_DIR/a
 gpgv --keyring "$TMP_DIR/archive.gpg" "$TMP_DIR/InRelease" \
     || fail 'The repository metadata signature did not verify. No APT configuration was changed.'
 
-# Debian architecture-specific sources avoid fetching unsupported architectures.
+# Architecture-specific APT sources avoid fetching incompatible package indexes.
 printf 'deb [arch=%s signed-by=%s] %s %s main\n' \
     "$ARCH" "$KEYRING" "$REPO_URL" "$CODENAME" > "$TMP_DIR/source.list"
 
@@ -78,6 +99,6 @@ fi
 install -m 0644 "$TMP_DIR/archive.gpg" "$KEYRING" || fail 'Failed to install the signing key.'
 install -m 0644 "$TMP_DIR/source.list" "$LIST_FILE" || fail 'Failed to install APT source.'
 
-info "Installed $REPO_URL for Debian $CODENAME ($ARCH)."
+info "Installed $REPO_URL for ${PRETTY_NAME:-Linux} ($CODENAME, $ARCH)."
 info 'Run: sudo apt update'
 info 'Then: sudo apt install <package-name>'
