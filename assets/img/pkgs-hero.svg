@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">NetworkLuki Linux Packages</title>
+<desc id="desc">Blue NetworkLuki branding illustration with an APT package, GPG signing key, and Linux package delivery message.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030c21"/><stop offset=".62" stop-color="#081d47"/><stop offset="1" stop-color="#05112d"/></linearGradient>
+  <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset=".55" stop-color="#2563eb"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
+  <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#d9e9ff"/></linearGradient>
+  <radialGradient id="light"><stop stop-color="#0060fa" stop-opacity=".3"/><stop offset="1" stop-color="#0060fa" stop-opacity="0"/></radialGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#000818" flood-opacity=".6"/></filter>
+</defs>
+<rect width="1600" height="760" rx="32" fill="url(#bg)"/>
+<circle cx="375" cy="325" r="420" fill="url(#light)"/>
+<circle cx="1390" cy="68" r="310" fill="url(#light)"/>
+<g fill="none" stroke="#1d4ed8" stroke-width="2" opacity=".22"><path d="M0 645Q330 512 680 640T1600 590"/><path d="M0 697Q410 572 790 690T1600 651"/><path d="M0 732Q390 622 800 735T1600 709"/></g>
+<g opacity=".37" stroke="#60a5fa" fill="none"><path d="M1100 60l122 57 121-37 140 81"/><path d="M1080 141l115 50 155-18 170 101"/><circle cx="1222" cy="117" r="5" fill="#38bdf8"/><circle cx="1343" cy="80" r="5" fill="#38bdf8"/><circle cx="1350" cy="173" r="5" fill="#38bdf8"/></g>
+<g transform="translate(104 88)" filter="url(#shadow)">
+  <path d="M105 135 332 76 484 166 261 223Z" fill="url(#silver)" stroke="#173778" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M105 135v278l156 95V223Z" fill="#0b2665" stroke="#173778" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M261 223v285l223-112V166Z" fill="url(#silver)" stroke="#173778" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M184 115 304 85l131 77-115 29Z" fill="url(#cyan)"/>
+  <path d="M304 85v129l30 17V103Z" fill="#1573fa"/>
+  <path d="M304 209v57l30-22v-62Z" fill="#07265f"/>
+  <text x="137" y="320" font-size="96" font-weight="800" font-family="Ubuntu,Arial,sans-serif" fill="#fff">APT</text>
+  <rect x="139" y="337" width="92" height="12" rx="6" fill="#22d3ee"/>
+  <text x="137" y="431" font-size="72" font-weight="700" font-family="Ubuntu,Arial,sans-serif" fill="#38bdf8">.deb</text>
+  <rect x="308" y="271" width="108" height="127" rx="16" fill="none" stroke="#2563eb" stroke-width="12"/>
+  <g stroke="#2563eb" stroke-width="10" stroke-linecap="round"><path d="M333 306h60M333 336h58M333 367h38"/></g>
+  <circle cx="428" cy="433" r="100" fill="url(#cyan)" stroke="#09285b" stroke-width="9"/>
+  <circle cx="428" cy="433" r="78" fill="#06173b"/>
+  <g transform="translate(386 383)" fill="white"><circle cx="42" cy="23" r="25"/><circle cx="42" cy="23" r="10" fill="#06173b"/><path d="M40 43v59h14l10-11h15v-13h12V64l-31-12z"/></g>
+</g>
+<g font-family="Ubuntu,Arial,sans-serif" transform="translate(734 245)">
+  <text y="-71" font-size="23" font-weight="700" letter-spacing="7" fill="#7dd3fc">NETWORKLUKI · LINUX REPOSITORY</text>
+  <text y="46" font-size="70" font-weight="800" letter-spacing="-2" fill="#fff">pkgs.networkluki.com</text>
+  <text y="118" font-size="37" letter-spacing="5" fill="#38bdf8">SECURE LINUX PACKAGES</text>
+  <text y="184" font-size="29" fill="#c6d9f8">APT packages. Signed metadata. Reliable updates.</text>
+  <g transform="translate(0 238)" font-size="22" fill="#dbeafe">
+    <rect width="600" height="83" rx="17" fill="#091b41" stroke="#22549a" stroke-width="2"/>
+    <circle cx="39" cy="41" r="14" fill="#10b981"/>
+    <path d="m32 40 6 7 11-14" fill="none" stroke="#eafffa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="67" y="35" font-weight="700">GPG-verified APT repository</text>
+    <text x="67" y="62" font-size="19" fill="#93c5fd">Debian 13 Trixie · amd64 · main</text>
+  </g>
+</g>
+</svg>
