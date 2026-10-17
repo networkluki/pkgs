@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#06152f">
-  <link rel="icon" href="/assets/img/pkgs-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/pkgs-logo.webp" type="image/webp">
   <meta property="og:title" content="NetworkLuki Packages">
   <meta property="og:description" content="Signed APT packages and reliable updates for Linux.">
-  <meta property="og:image" content="https://pkgs.networkluki.com/assets/img/pkgs-hero.svg">
+  <meta property="og:image" content="https://pkgs.networkluki.com/assets/img/pkgs-logo.webp">
   <meta name="description" content="NetworkLuki Linux packages. APT repository setup for compatible Debian- and Ubuntu-based distributions, with more package formats planned.">
   <title>NetworkLuki Packages | APT Repository</title>
   <style>
@@ -32,6 +32,8 @@
     .hero { padding: clamp(86px, 11vw, 138px) 0 70px; text-align: center; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid #ffffff2b; border-radius: 100px; padding: 7px 16px; background: #ffffff09; color: #bfdcf8; font-size: .79rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
     .eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 14px #38bdf8b0; }
+    .hero-logo { width: 160px; height: 160px; margin: 28px auto 0; overflow: hidden; border-radius: 24px; border: 1px solid var(--line); background: #000; box-shadow: 0 18px 40px #0007; }
+    .hero-logo img { display: block; width: 100%; height: 100%; object-fit: cover; }
     h1 { margin: 27px auto 16px; font-size: clamp(2.9rem, 7vw, 5.4rem); line-height: 1.08; letter-spacing: -.065em; font-weight: 800; }
     h1 span { color: var(--orange-soft); }
     .lede { max-width: 660px; margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2vw, 1.16rem); }
@@ -58,8 +60,6 @@
     .button-primary:hover { background: #347cff; }
     .button-secondary { border: 1px solid #537095; background: #ffffff0b; }
     .button-secondary:hover { background: #ffffff18; }
-    .hero-visual { max-width: 1000px; margin: 42px auto 0; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 24px 65px #0007; background: #061329; }
-    .hero-banner { display: block; width: 100%; height: auto; }
     .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 5px 0 90px; }
     .feature { padding: 26px 23px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(155deg, #10284bdd, #0a1b38ee); }
     .feature .symbol { font-size: 1.5rem; line-height: 1.2; color: var(--orange-soft); }
@@ -78,13 +78,14 @@
 <body>
   <header class="top">
     <nav class="wrap nav" aria-label="Main navigation">
-      <a class="brand" href="/" aria-label="NetworkLuki Packages home"><span class="brand-icon" aria-hidden="true"><img src="/assets/img/pkgs-icon.svg" alt=""></span><span>NetworkLuki <span class="brand-accent">Packages</span></span></a>
+      <a class="brand" href="/" aria-label="NetworkLuki Packages home"><span class="brand-icon" aria-hidden="true"><img src="/assets/img/pkgs-logo.webp" alt=""></span><span>NetworkLuki <span class="brand-accent">Packages</span></span></a>
       <div class="links"><a href="#install">Install</a><a href="https://github.com/networkluki/pkgs" rel="noopener noreferrer">GitHub ↗</a></div>
     </nav>
   </header>
   <main class="wrap">
     <section class="hero" aria-labelledby="page-title">
       <div class="eyebrow">Official package repository</div>
+      <div class="hero-logo"><img src="/assets/img/pkgs-logo.webp" alt="NetworkLuki Packages logo" width="160" height="160"></div>
       <h1 id="page-title">Your packages.<br><span>Your Linux.</span></h1>
       <p class="lede">Linux packages, updates and custom-built tools. APT setup for compatible Debian- and Ubuntu-based systems, with additional distributions planned.</p>
       <div class="terminal" id="install" aria-label="Installation commands">
@@ -109,9 +110,6 @@
       <div class="actions">
         <a class="button button-primary" href="https://github.com/networkluki/pkgs" rel="noopener noreferrer">View on GitHub ↗</a>
         <a class="button button-secondary" href="https://github.com/networkluki/pkgs/blob/main/install.sh" rel="noopener noreferrer">Read install.sh</a>
-      </div>
-      <div class="hero-visual">
-        <img class="hero-banner" src="/assets/img/pkgs-hero.svg" alt="NetworkLuki Packages: blue APT package box with GPG key badge and signed Linux repository banner" width="1600" height="760" loading="lazy" decoding="async">
       </div>
     </section>
     <section class="features" aria-label="Repository features">
