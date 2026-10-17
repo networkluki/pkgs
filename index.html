@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#2c001e">
-  <meta name="description" content="The official NetworkLuki APT package repository for Debian Linux. Explore packages and installation instructions.">
+  <meta name="description" content="NetworkLuki Linux packages. APT repository setup for compatible Debian- and Ubuntu-based distributions, with more package formats planned.">
   <title>NetworkLuki Packages | APT Repository</title>
   <style>
     :root { color-scheme: dark; --bg: #0e0c13; --surface: #19131e; --surface-2: #211826; --aubergine: #2c001e; --orange: #e95420; --orange-soft: #ffa47e; --text: #f8f3f9; --muted: #b9aebf; --line: #443545; }
@@ -75,11 +75,11 @@
     <section class="hero" aria-labelledby="page-title">
       <div class="eyebrow">Official package repository</div>
       <h1 id="page-title">Your packages.<br><span>Your Linux.</span></h1>
-      <p class="lede">The NetworkLuki APT repository for Debian. One place for maintained packages, updates and custom-built tools.</p>
+      <p class="lede">Linux packages, updates and custom-built tools. APT setup for compatible Debian- and Ubuntu-based systems, with additional distributions planned.</p>
       <div class="terminal" id="install" aria-label="Installation commands">
         <div class="terminal-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span>luki@networkluki: ~</span><span aria-hidden="true">⌘</span></div>
         <div class="terminal-content">
-          <div class="terminal-label">Add the repository</div>
+          <div class="terminal-label">Add the APT repository (compatible Linux distributions)</div>
           <div class="command">
             <div class="code"><span class="prompt" aria-hidden="true">$</span><span>curl -fsSL https://pkgs.networkluki.com/install.sh | sudo sh</span></div>
             <button class="copy" type="button" data-copy="curl -fsSL https://pkgs.networkluki.com/install.sh | sudo sh" aria-label="Copy repository installation command"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button>
@@ -89,7 +89,7 @@
             <button class="copy" type="button" data-copy="sudo apt update" aria-label="Copy package index update command"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button>
           </div>
         </div>
-        <p class="warning">Debian only. Review <a href="https://github.com/networkluki/pkgs/blob/main/install.sh" rel="noopener noreferrer">install.sh</a> before running remote code as root. Requires published signing key and signed APT metadata.</p>
+        <p class="warning">APT-based Linux only where a signed repository for your release is available. Review <a href="https://github.com/networkluki/pkgs/blob/main/install.sh" rel="noopener noreferrer">install.sh</a> before running remote code as root. Requires published signing key and signed APT metadata.</p>
       </div>
       <div class="actions">
         <a class="button button-primary" href="https://github.com/networkluki/pkgs" rel="noopener noreferrer">View on GitHub ↗</a>
@@ -97,8 +97,8 @@
       </div>
     </section>
     <section class="features" aria-label="Repository features">
-      <article class="feature"><div class="symbol" aria-hidden="true">◆</div><h2>Built for Debian</h2><p>Identifies your Debian release and CPU architecture. Unsupported systems are rejected rather than silently mapped elsewhere.</p></article>
-      <article class="feature"><div class="symbol" aria-hidden="true">⌁</div><h2>APT-native</h2><p>Install and update packages through the package manager you already use, with repository-scoped signing keys.</p></article>
+      <article class="feature"><div class="symbol" aria-hidden="true">◆</div><h2>Linux-aware setup</h2><p>Detects Debian- and Ubuntu-based releases and CPU architecture. Unsupported distributions or unpublished releases are rejected safely.</p></article>
+      <article class="feature"><div class="symbol" aria-hidden="true">⌁</div><h2>APT support</h2><p>Use signed APT packages on compatible Linux systems. RPM, Pacman and APK support will require separately published repositories.</p></article>
       <article class="feature"><div class="symbol" aria-hidden="true">⌘</div><h2>Open source</h2><p>Read the installer and follow changes to the repository on GitHub before trusting any software.</p></article>
     </section>
   </main>
