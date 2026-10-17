@@ -8,6 +8,7 @@
   <link rel="icon" href="/assets/img/pkgs-icon.svg" type="image/svg+xml">
   <meta property="og:title" content="NetworkLuki Packages">
   <meta property="og:description" content="Signed APT packages and reliable updates for Linux.">
+  <meta property="og:image" content="https://pkgs.networkluki.com/assets/img/pkgs-hero.svg">
   <meta name="description" content="NetworkLuki Linux packages. APT repository setup for compatible Debian- and Ubuntu-based distributions, with more package formats planned.">
   <title>NetworkLuki Packages | APT Repository</title>
   <style>
@@ -89,7 +90,7 @@
       <div class="terminal" id="install" aria-label="Installation commands">
         <div class="terminal-bar"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span>luki@networkluki: ~</span><span aria-hidden="true">⌘</span></div>
         <div class="terminal-content">
-          <div class="terminal-label">Add the APT repository (compatible Linux distributions)</div>
+          <div class="terminal-label">Add the APT repository</div>
           <div class="command">
             <div class="code"><span class="prompt" aria-hidden="true">$</span><span>curl -fsSL https://pkgs.networkluki.com/install.sh | sudo sh</span></div>
             <button class="copy" type="button" data-copy="curl -fsSL https://pkgs.networkluki.com/install.sh | sudo sh" aria-label="Copy repository installation command"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button>
@@ -97,6 +98,10 @@
           <div class="command">
             <div class="code"><span class="prompt" aria-hidden="true">$</span><span>sudo apt update</span></div>
             <button class="copy" type="button" data-copy="sudo apt update" aria-label="Copy package index update command"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button>
+          </div>
+          <div class="command">
+            <div class="code"><span class="prompt" aria-hidden="true">$</span><span>sudo apt install tictactoe</span></div>
+            <button class="copy" type="button" data-copy="sudo apt install tictactoe" aria-label="Copy Tic-Tac-Toe installation command"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg><span>Copy</span></button>
           </div>
         </div>
         <p class="warning">APT-based Linux only where a signed repository for your release is available. Review <a href="https://github.com/networkluki/pkgs/blob/main/install.sh" rel="noopener noreferrer">install.sh</a> before running remote code as root. Requires published signing key and signed APT metadata.</p>
