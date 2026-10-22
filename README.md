@@ -1,5 +1,8 @@
 # NetworkLuki Packages
 
+**[Changelog / Release History](CHANGELOG.md)**
+
+
 Official package repository for distributing and maintaining NetworkLuki Linux
 applications, APT packages, updates, and custom-built tools.
 
