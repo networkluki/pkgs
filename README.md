@@ -30,6 +30,55 @@ APT packages are currently published for selected distributions/releases
 available. A distribution is supported only when its own compatible signed
 repository metadata and packages have been published.
 
+## CyberLab 0.1.2 — Debian 13 amd64
+
+The reviewed [CyberLab release](https://github.com/networkluki/networkluki-cyberlab/releases/tag/v0.1.2)
+is prepared for the `trixie` archive at
+`pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb`.
+Its SHA-256 is `856939a724f1e2542af9cf21596a96062f7d86162e323aacaf78bda72452b385`.
+The package includes its Python/Qt runtime and requires Debian 13 desktop
+libraries on amd64. Ubuntu and other distributions are not covered by this import.
+
+**Publication status:** importing the DEB does not add it to the signed APT
+index. The existing archive key must sign the updated `trixie` metadata before
+clients can install CyberLab by name. No private key is stored in GitHub or
+required by the import workflow. CI uses a separate, disposable signing key
+only to verify APT dependency resolution against a temporary repository.
+
+On the trusted Linux machine holding the archive key, install the publishing
+tools and check out the preparation branch:
+
+```bash
+sudo apt-get install --no-install-recommends apt-utils gnupg python3 util-linux
+git fetch origin
+git switch --track origin/codex/cyberlab-apt-0.1.2
+bash scripts/publish-cyberlab.sh --dry-run
+bash scripts/publish-cyberlab.sh --commit
+git diff --check
+git add dists/trixie
+git commit -m "Publish signed CyberLab 0.1.2 for Debian Trixie"
+git push origin codex/cyberlab-apt-0.1.2
+```
+
+If the branch already exists locally, use `git switch codex/cyberlab-apt-0.1.2`
+followed by `git pull --ff-only` instead of `git switch --track`.
+Review and merge the preparation pull request only after the signed files have
+been pushed. The helper preserves the existing Tic-Tac-Toe packages and backs
+up the old metadata under `.git`; it does not change Ubuntu's `resolute` archive.
+
+After the signed update is published and the repository is configured:
+
+```bash
+sudo apt update
+sudo apt install networkluki-cyberlab
+networkluki-cyberlab --version
+```
+
+CyberLab's original application code is **MIT-licensed**, with separate
+Python/Qt dependency notices inside the package. Its corresponding dependency
+source archives remain available alongside the linked CyberLab release; the
+repository's restricted license does not replace these component licenses.
+
 ## Ubuntu 26.04 (Resolute): signing and publishing
 
 Ubuntu 26.04 (`resolute`) needs its **own** signed APT metadata. Do not
