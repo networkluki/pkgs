@@ -28,6 +28,8 @@ jobs:
           apt-get update
           apt-get install -y --no-install-recommends ca-certificates git python3 apt-utils gnupg shellcheck util-linux
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Register the runner-owned checkout in this disposable container
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Import exact release artifact
         run: python3 scripts/import-cyberlab.py
       - name: Validate publishing helper
@@ -39,7 +41,6 @@ jobs:
         run: python3 tests/check_cyberlab_apt.py
       - name: Commit verified DEB to the preparation branch
         run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git diff --exit-code -- dists
           git add -- pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb
           if git diff --cached --quiet; then
