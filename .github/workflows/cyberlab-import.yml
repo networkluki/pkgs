@@ -1,0 +1,49 @@
+name: Prepare CyberLab APT package
+
+on:
+  push:
+    branches: [codex/cyberlab-apt-0.1.2]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cyberlab-apt-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: github.repository == 'networkluki/pkgs' && github.ref == 'refs/heads/codex/cyberlab-apt-0.1.2'
+    runs-on: ubuntu-24.04
+    container: debian:13-slim
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      DEBIAN_FRONTEND: noninteractive
+    steps:
+      - name: Install verification tools
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends ca-certificates git python3 apt-utils gnupg shellcheck util-linux
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Import exact release artifact
+        run: python3 scripts/import-cyberlab.py
+      - name: Validate publishing helper
+        run: |
+          shellcheck -x scripts/publish-cyberlab.sh
+          bash -n scripts/publish-cyberlab.sh
+          bash scripts/publish-cyberlab.sh --dry-run
+      - name: Verify signed APT fixture and dependency resolution
+        run: python3 tests/check_cyberlab_apt.py
+      - name: Commit verified DEB to the preparation branch
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git diff --exit-code -- dists
+          git add -- pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Add verified CyberLab 0.1.2 Debian package'
+          git push origin HEAD:refs/heads/codex/cyberlab-apt-0.1.2
