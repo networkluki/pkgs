@@ -56,3 +56,22 @@ Description: Tic-Tac-Toe game against the computer or a friend
  dark theme can be chosen from the System menu.
  Created by Luki Hackwell.
 
+Package: networkluki-cyberlab
+Architecture: amd64
+Version: 0.1.2
+Priority: optional
+Section: utils
+Maintainer: Luki Hackwell <83667327+networkluki@users.noreply.github.com>
+Installed-Size: 116336
+Depends: libc6 (>= 2.41), libatomic1, libblkid1, libbrotli1, libbz2-1.0, libcap2, libcom-err2, libdbus-1-3, libegl1, libexpat1, libffi8, libfontconfig1, libfreetype6, libgcc-s1, libgl1, libglib2.0-0t64, libgssapi-krb5-2, libice6, libk5crypto3, libkeyutils1, libkrb5-3, libkrb5support0, liblzma5, libmount1, libpcre2-8-0, libpng16-16t64, libreadline8t64, libselinux1, libsm6, libsqlite3-0, libssl3t64, libstdc++6, libsystemd0, libtinfo6, libx11-6, libx11-xcb1, libxau6, libxcb-cursor0, libxcb-glx0, libxcb-icccm4, libxcb-image0, libxcb-keysyms1, libxcb-randr0, libxcb-render-util0, libxcb-render0, libxcb-shape0, libxcb-shm0, libxcb-sync1, libxcb-util1, libxcb-xfixes0, libxcb-xkb1, libxcb1, libxdmcp6, libxkbcommon-x11-0, libxkbcommon0, libzstd1, zlib1g
+Filename: pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb
+Size: 31177088
+MD5sum: e6e3f7927848cb9e765a36ca26fdfc17
+SHA1: fcbb3872250f8b920b3e9a23fca78ed872dcb9f2
+SHA256: 856939a724f1e2542af9cf21596a96062f7d86162e323aacaf78bda72452b385
+SHA512: 29155ec436f3d5e08ac3523e1c6c06f0c62cfb4c11886a3e46cc1a0e2d45d6b0a40bb83e8eca9f7ae2160419141968b87c1cb140f044949859cd38ce1940935f
+Homepage: https://github.com/networkluki/networkluki-cyberlab
+Description: Desktop security research and static file analysis workbench
+ Scoped TCP checks, HTTP/TLS observations, file hashes and static binary inspection.
+ The application runs as a normal desktop user and stores results locally.
+
