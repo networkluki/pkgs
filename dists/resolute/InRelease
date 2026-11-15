@@ -1,29 +1,29 @@
 -----BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA512
+Hash: SHA256
 
 Architectures: amd64
 Codename: resolute
 Components: main
-Date: Sat, 17 Oct 2026 15:35:41 +0000
+Date: Sun, 15 Nov 2026 11:18:49 +0000
 Label: NetworkLuki Packages
 Origin: NetworkLuki
 Suite: resolute
 MD5Sum:
- fa47f4482d32c2854f01b089af59607d             2393 main/binary-amd64/Packages
- 513ee3507071bf9d31a5523e11ccfe66             1003 main/binary-amd64/Packages.gz
+ 008be206c10c20f12cc6b9c93e2ee94b             4033 main/binary-amd64/Packages
+ ae0b63bb4df1c50e602314374f52f894             1771 main/binary-amd64/Packages.gz
 SHA1:
- dae8e9bb42d1c1fd739ee10ee49ee0b68c80ec69             2393 main/binary-amd64/Packages
- 3794a259d9af3896444a23b4554653d6bf33dae6             1003 main/binary-amd64/Packages.gz
+ e181ab5e44442790cd141e030f61d6f7b95a5fad             4033 main/binary-amd64/Packages
+ cc0d7dc2b3122aa6c3c2158293e4797e4f1654be             1771 main/binary-amd64/Packages.gz
 SHA256:
- d5624800b17f859556c7e2f5126df1219eeed0d1ab03e48afb63a8ba788ac0cb             2393 main/binary-amd64/Packages
- edfc14e920e8a2138c4f04d3b76b6a496d7caaa8ae38efe0acf8139bcab0a600             1003 main/binary-amd64/Packages.gz
+ d729f7fcb5a2e03da7c20181c4f7b2d1bd4e1e1c4e95ca53161a76b724266599             4033 main/binary-amd64/Packages
+ c9eb5ec61bb88efd2b35ff71c4c1d8e53ea294a66b60e6fdcf4e1def0d7c3002             1771 main/binary-amd64/Packages.gz
 SHA512:
- f9b33f6fc0b493daab27f8495f299435e5c127b8c8a3f8cb4c50c51e641e30bd9055897b5703ba13c256b1777dcaec87e0708eb8dce95273f388cc0b889eebf0             2393 main/binary-amd64/Packages
- c2168b808feaa89882cf6fd32e5ea839638e2f85a4c6696a8a01036c2cb93cb3883699217dab30ecbec663594480629e4b2ccd72ed57efc69b35d87f5dd778a9             1003 main/binary-amd64/Packages.gz
+ 868c7b1fb7516092e8b20399507db1bf41e7c2a42d4292f62430e44181b8b453927ac980f56228df769ceb411c80284f0bd7208017ea17b0c785b8c2330d557f             4033 main/binary-amd64/Packages
+ c28e2d79b2ef2f74f20f0593e9efbba45c97467fe890d876799dcd4eb78b86dcf5c066bef737297c9bb52be10833a573e7c398e1ca5ee2cf2f12795da5f133ae             1771 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQSCks0s9InfvxSVTS8cP4kBjaQiPQUCatOWUQAKCRAcP4kBjaQi
-PQm5AP9WDKnxZQM/4bORNxhtMzWwrJOcRxyCPcZeFOaVvVNNEAEAxTimOuU92TGM
-/+kNWbTIM+bK6PWen0yxyOP/aJF6Ng4=
-=OMNE
+iHUEARYIAB0WIQSCks0s9InfvxSVTS8cP4kBjaQiPQUCavmVGgAKCRAcP4kBjaQi
+PcMpAP9l3el4F9vr+3MipL257xL1pinTrea0bZwP2QBYpOkUOAEA/ytAeHChjO5t
+b/raHHa2u4KcckB1ynl55DT3dT33PAo=
+=6axn
 -----END PGP SIGNATURE-----
