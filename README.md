@@ -30,41 +30,42 @@ APT packages are currently published for selected distributions/releases
 available. A distribution is supported only when its own compatible signed
 repository metadata and packages have been published.
 
-## CyberLab 0.1.2 — Debian 13 amd64
+## CyberLab 0.1.2 — Debian 13 and Ubuntu 26.04, amd64
 
 The reviewed [CyberLab release](https://github.com/networkluki/networkluki-cyberlab/releases/tag/v0.1.2)
-is prepared for the `trixie` archive at
-`pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb`.
+is stored once at
+`pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb`
+and indexed by both the `trixie` and `resolute` archives.
 Its SHA-256 is `856939a724f1e2542af9cf21596a96062f7d86162e323aacaf78bda72452b385`.
-The package includes its Python/Qt runtime and requires Debian 13 desktop
-libraries on amd64. Ubuntu and other distributions are not covered by this import.
+The package includes its Python/Qt runtime and depends on system desktop
+libraries on amd64. It is built on Debian 13; on Ubuntu 26.04 every declared
+dependency resolves from the `resolute` main/universe archives, and installation
+plus `networkluki-cyberlab --version` were verified in an `ubuntu:26.04` container.
+The graphical interface has not been tested on Ubuntu.
 
 **Publication status:** importing the DEB does not add it to the signed APT
-index. The existing archive key must sign the updated `trixie` metadata before
-clients can install CyberLab by name. No private key is stored in GitHub or
-required by the import workflow. CI uses a separate, disposable signing key
-only to verify APT dependency resolution against a temporary repository.
+index. The existing archive key must sign the updated metadata for each
+codename before clients can install CyberLab by name. No private key is stored
+in GitHub or required by the import workflow. CI uses a separate, disposable
+signing key only to verify APT dependency resolution against a temporary repository.
 
-On the trusted Linux machine holding the archive key, install the publishing
-tools and check out the preparation branch:
+On the trusted Linux machine holding the archive key, sign one codename at a
+time (`trixie` is the default when the codename is omitted):
 
 ```bash
 sudo apt-get install --no-install-recommends apt-utils gnupg python3 util-linux
-git fetch origin
-git switch --track origin/codex/cyberlab-apt-0.1.2
-bash scripts/publish-cyberlab.sh --dry-run
-bash scripts/publish-cyberlab.sh --commit
+cd ~/deb/pkgs
+git pull --ff-only
+bash scripts/publish-cyberlab.sh --dry-run resolute
+bash scripts/publish-cyberlab.sh --commit resolute
 git diff --check
-git add dists/trixie
-git commit -m "Publish signed CyberLab 0.1.2 for Debian Trixie"
-git push origin codex/cyberlab-apt-0.1.2
+git add dists/resolute
+git commit -m "Publish signed CyberLab 0.1.2 for Ubuntu Resolute"
+git push origin main
 ```
 
-If the branch already exists locally, use `git switch codex/cyberlab-apt-0.1.2`
-followed by `git pull --ff-only` instead of `git switch --track`.
-Review and merge the preparation pull request only after the signed files have
-been pushed. The helper preserves the existing Tic-Tac-Toe packages and backs
-up the old metadata under `.git`; it does not change Ubuntu's `resolute` archive.
+The helper only touches `dists/<codename>`, preserves the existing Tic-Tac-Toe
+packages and backs up the old metadata under `.git`.
 
 After the signed update is published and the repository is configured:
 

@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 # ---------------------------------------------------------------------------
 # NAME        : publish-cyberlab.sh
-# PURPOSE     : Stage or locally sign CyberLab 0.1.2 for Debian 13 amd64.
-# USAGE       : bash scripts/publish-cyberlab.sh [--dry-run|--commit]
+# PURPOSE     : Stage or locally sign CyberLab 0.1.2 for Debian 13 (trixie)
+#               or Ubuntu 26.04 (resolute), amd64.
+# USAGE       : bash scripts/publish-cyberlab.sh [--dry-run|--commit] [trixie|resolute]
 # DEPENDENCIES: Bash 5.2+, GNU coreutils, git, apt-utils, gnupg, python3, flock
 # EXIT CODES  : 0 success | 1 error | 2 usage | 3 another publisher holds lock
-# VERSION     : 1.0.0
+# VERSION     : 1.1.0
 # CHANGELOG   : 1.0.0 initial; never uploads files or exports signing keys
+#               1.1.0 optional codename argument (default trixie) adds resolute
 # ---------------------------------------------------------------------------
 set -Eeuo pipefail
 IFS=$'\n\t'
@@ -18,13 +20,14 @@ readonly SCRIPT_NAME="${BASH_SOURCE[0]##*/}"
 readonly EXPECTED_FPR='8292CD2CF489DFBF14954D2F1C3F89018DA4223D'
 readonly PACKAGE='pool/main/n/networkluki-cyberlab/networkluki-cyberlab_0.1.2_amd64.deb'
 readonly PACKAGE_SHA='856939a724f1e2542af9cf21596a96062f7d86162e323aacaf78bda72452b385'
-readonly DIST='dists/trixie'
+readonly CODENAMES=('trixie' 'resolute')
+CODENAME=''; DIST=''
 readonly FILES=('main/binary-amd64/Packages' 'main/binary-amd64/Packages.gz' 'Release' 'Release.gpg' 'InRelease')
 ROOT_DIR=''; WORK=''; BACKUP=''; REPLACING=0; FINISHED=0
 
 log() { printf '%s [%s] %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$1" "${*:2}" >&2; }
 die() { log ERROR "$*"; exit 1; }
-usage() { printf 'Usage: %s [--dry-run|--commit]\n' "$SCRIPT_NAME" >&2; }
+usage() { printf 'Usage: %s [--dry-run|--commit] [trixie|resolute]\n' "$SCRIPT_NAME" >&2; }
 atomic_copy() {
   local source="$1" destination="$2" temporary
   temporary="$(mktemp -- "${destination}.cyberlab.XXXXXX")"
@@ -53,10 +56,10 @@ trap 'log ERROR "Failed at line $LINENO"' ERR
 trap 'exit 130' INT TERM HUP
 
 validate_metadata() {
-  python3 - "$ROOT_DIR" "$1" "$2" "$PACKAGE" "$PACKAGE_SHA" <<'PY'
+  python3 - "$ROOT_DIR" "$1" "$2" "$PACKAGE" "$PACKAGE_SHA" "$CODENAME" <<'PY'
 import gzip, hashlib, pathlib, subprocess, sys
 root, dist, baseline = map(pathlib.Path, sys.argv[1:4])
-expected_file, expected_sha = sys.argv[4:6]
+expected_file, expected_sha, codename = sys.argv[4:7]
 def require(ok, message):
     if not ok: raise SystemExit(message)
 def safe_file(path):
@@ -79,7 +82,7 @@ def records(data):
         result.append(record)
     return result
 release=records(safe_file(dist/'Release'))[0]
-for key,value in {'Codename':'trixie','Suite':'trixie','Components':'main','Architectures':'amd64','Origin':'NetworkLuki'}.items():
+for key,value in {'Codename':codename,'Suite':codename,'Components':'main','Architectures':'amd64','Origin':'NetworkLuki'}.items():
     require(release.get(key)==value, 'Unexpected Release field: '+key)
 indexes={}
 for line in release.get('SHA256','').splitlines():
@@ -123,10 +126,15 @@ verify_signatures() {
 }
 
 main() {
-  local mode='--dry-run' command fingerprint stage file preview
-  if (($# > 1)); then usage; exit 2; fi
-  if (($# == 1)); then mode="$1"; fi
+  local mode='--dry-run' command fingerprint stage file preview allowed
+  if (($# > 2)); then usage; exit 2; fi
+  if (($# >= 1)); then mode="$1"; fi
+  CODENAME="${2:-trixie}"
   case "$mode" in --dry-run|--commit) ;; --help|-h) usage; return 0 ;; *) usage; exit 2 ;; esac
+  for allowed in "${CODENAMES[@]}"; do [[ "$CODENAME" == "$allowed" ]] && break; done
+  [[ "$CODENAME" == "$allowed" ]] || { usage; exit 2; }
+  DIST="dists/$CODENAME"
+  readonly CODENAME DIST
   for command in git dpkg-deb apt-ftparchive gzip gpg python3 flock mktemp install realpath mv rm cp cmp awk date id mkdir dirname; do
     command -v "$command" >/dev/null 2>&1 || die "Missing command: $command"
   done
@@ -140,7 +148,7 @@ main() {
   flock -n 9 || { log INFO 'Another publisher holds the lock.'; exit 3; }
   if [[ "$mode" == '--commit' ]]; then
     [[ "$(id -u)" -ne 0 ]] || die 'Sign as your normal user, never as root.'
-    [[ -z "$(git status --porcelain -- pool dists/trixie pkgs.networkluki.com-archive.asc)" ]] || die 'Commit reviewed pool/key/index changes before signing.'
+    [[ -z "$(git status --porcelain -- pool "$DIST" pkgs.networkluki.com-archive.asc)" ]] || die 'Commit reviewed pool/key/index changes before signing.'
   fi
   WORK="$(mktemp -d -- "$ROOT_DIR/.git/cyberlab-work.XXXXXX")"
   mkdir -m 0700 -- "$WORK/keyring"
@@ -169,7 +177,7 @@ PY
   gzip -9 -n -c -- "$stage/main/binary-amd64/Packages" > "$stage/main/binary-amd64/Packages.gz"
   apt-ftparchive -o APT::FTPArchive::Release::Origin=NetworkLuki \
     -o 'APT::FTPArchive::Release::Label=NetworkLuki Packages' \
-    -o APT::FTPArchive::Release::Suite=trixie -o APT::FTPArchive::Release::Codename=trixie \
+    -o "APT::FTPArchive::Release::Suite=$CODENAME" -o "APT::FTPArchive::Release::Codename=$CODENAME" \
     -o APT::FTPArchive::Release::Architectures=amd64 -o APT::FTPArchive::Release::Components=main \
     release "$stage" > "$WORK/Release"
   mv -- "$WORK/Release" "$stage/Release"
@@ -200,7 +208,7 @@ PY
   verify_signatures "$ROOT_DIR/$DIST"
   validate_metadata "$ROOT_DIR/$DIST" "$ROOT_DIR/$DIST"
   FINISHED=1
-  log INFO "Signed Debian metadata prepared; previous metadata retained in $BACKUP"
-  log INFO 'Review and commit dists/trixie, then push through the repository publication process.'
+  log INFO "Signed $CODENAME metadata prepared; previous metadata retained in $BACKUP"
+  log INFO "Review and commit $DIST, then push through the repository publication process."
 }
 main "$@"
